@@ -1,0 +1,133 @@
+.useCasesSection {
+  padding: 24px 0 82px;
+  background: #f3ecdf;
+}
+
+.useCasesGrid {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.useCaseCard {
+  overflow: hidden;
+  border: 1px solid rgba(35, 32, 27, .24);
+  background: #fbf8f1;
+  transform: translateY(0);
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease;
+}
+
+.useCaseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(75,55,34,.12);
+}
+
+.cardCopy {
+  min-height: 238px;
+  padding: 28px 25px 30px;
+}
+
+.cardCopy h2 {
+  margin: 0 0 12px;
+  color: #514332;
+  font: 500 18px/1.35 'Manrope', sans-serif;
+  letter-spacing: -.03em;
+}
+
+.cardCopy p,
+.promoCopy p {
+  margin: 0;
+  color: #75664f;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.inquiryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #157c7d;
+  font-size: 10px;
+  font-weight: 700;
+  transition: gap .2s ease;
+}
+
+.inquiryLink:hover {
+  gap: 15px;
+}
+
+.promoSection {
+  padding: 84px 24px 90px;
+  background: linear-gradient(135deg, #e8ddcb, #f3ecdf 62%, #e6d8c3);
+}
+
+.promoCopy {
+  max-width: 790px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.promoCopy h2 {
+  margin: 0 0 20px;
+  color: #514332;
+  font: 500 clamp(32px, 4vw, 46px)/1.15 'Manrope', sans-serif;
+  letter-spacing: -.05em;
+}
+
+.promoCopy p + p {
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .useCasesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cardCopy {
+    min-height: 252px;
+  }
+}
+
+@media (max-width: 680px) {
+  .useCasesSection {
+    padding: 8px 0 58px;
+  }
+
+  .useCasesGrid {
+    width: calc(100% - 40px);
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .cardCopy,
+  .useCasesGrid .useCaseCard .cardCopy {
+    min-height: 0;
+    padding: 24px 22px 26px;
+  }
+
+  .promoSection {
+    padding: 65px 20px 70px;
+  }
+
+  .promoCopy {
+    text-align: left;
+  }
+
+  .promoCopy h2 {
+    font-size: 35px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .useCaseCard {
+    transition: none;
+  }
+
+  .useCaseCard:hover {
+    transform: none;
+  }
+}
